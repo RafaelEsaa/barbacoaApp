@@ -11,4 +11,8 @@ class Barbacoa extends Model
     public function user(){
         return $this->belongsTo('App\User');
     }
+
+    public function reservation(){
+        return $this->hasOne('App\Reservation');
+    }
 }

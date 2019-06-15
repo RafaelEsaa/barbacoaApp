@@ -30,4 +30,8 @@ class User extends Authenticatable
     public function barbacoas(){
         return $this->hasMany('App\Comment');
     }
+
+    public function reservations(){
+        return $this->hasMany('App\Reservation');
+    }
 }
