@@ -11,16 +11,6 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-// Auth::routes();
-
-// Route::get('/home', 'HomeController@index')->name('home');
-
-// Route::get('/prueba', function(){
-//     return 'prueba';
-// })->middleware('auth');
-
-Route::view('/{path?}', 'app');
+Route::get('{slug}', function() {
+    return view('app');
+})->where('slug', '(?!api)([A-z\d-\/_.]+)?');
