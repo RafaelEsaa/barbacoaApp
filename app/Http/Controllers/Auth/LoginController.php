@@ -27,6 +27,16 @@ class LoginController extends Controller
      */
     protected $redirectTo = '/home';
 
+    public function authenticate(Request $request)
+    {
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::attempt($credentials)) {
+            // Authentication passed...
+            return redirect()->intended('dashboard');
+        }
+    }
+
     /**
      * Create a new controller instance.
      *
